@@ -32,12 +32,21 @@ namespace Horizont
             Runtime.UpdateFrequency = UpdateFrequency.Update1;
         }
 
-        void Main()
+        void Main(string arg)
         {
-            //гироскопы включай вручную))
+            switch(arg)
+            {
+                case ("Start"):
+                    gyro.GyroOverride = true;
+                    break;
+                case ("Stop"):
+                    gyro.GyroOverride = false;
+                    break;
+            }            
+            
             Vector3D GravVector = cockpit.GetNaturalGravity();
             float Pitch = (float)GravVector.Dot(cockpit.WorldMatrix.Backward);
-            float Roll = (float)GravVector.Dot(cockpit.WorldMatrix.Left);
+            float Roll = (float)GravVector.Dot(cockpit.WorldMatrix.Left);            
 
             gyro.Pitch = Pitch;
             gyro.Roll = Roll;
