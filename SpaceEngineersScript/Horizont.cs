@@ -22,13 +22,13 @@ namespace Horizont
     public sealed class Program : MyGridProgram
     {
 
-        IMyShipController cockpit;        
-        IMyGyro gyro;        
+        IMyShipController cockpit;
+        IMyGyro gyro;
 
         Program()
         {
             cockpit = GridTerminalSystem.GetBlockWithName("Cockpit") as IMyShipController;
-            gyro = GridTerminalSystem.GetBlockGroupWithName("Gyro") as IMyGyro;            
+            gyro = GridTerminalSystem.GetBlockGroupWithName("Gyro") as IMyGyro;
             Runtime.UpdateFrequency = UpdateFrequency.Update1;
         }
 
@@ -38,8 +38,9 @@ namespace Horizont
             Vector3D GravVector = cockpit.GetNaturalGravity();
             float Pitch = (float)GravVector.Dot(cockpit.WorldMatrix.Backward);
             float Roll = (float)GravVector.Dot(cockpit.WorldMatrix.Left);
-            
+
             gyro.Pitch = Pitch;
-            gyro.Roll = Roll;             
+            gyro.Roll = Roll;
         }
     }
+}
