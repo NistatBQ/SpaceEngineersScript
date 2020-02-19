@@ -17,19 +17,16 @@ using VRage.Game;
 using VRage;
 using VRageMath;
 
-namespace IngameScript
+namespace Test
 {
     partial class Program : MyGridProgram
     {
-        
-        public Program()
+
+        public Program();
+               
+        public void Main(string argument)
         {
             
         }        
-
-        public void Main(string argument, UpdateType updateSource)
-        {
-            
-        }
     }
 }
