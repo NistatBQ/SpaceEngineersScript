@@ -42,6 +42,9 @@ namespace Horizont
                 case ("Stop"):
                     gyro.GyroOverride = false;
                     break;
+                default:
+                    gyro.GyroOverride = false;
+                    break;
             }            
             
             Vector3D GravVector = cockpit.GetNaturalGravity();
