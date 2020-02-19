@@ -22,11 +22,14 @@ namespace Test
     partial class Program : MyGridProgram
     {
 
-        public Program();
+        public Program()
+           
+
+
                
         public void Main(string argument)
         {
-            
+            rew
         }        
     }
 }
