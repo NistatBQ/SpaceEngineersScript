@@ -1,0 +1,2 @@
+# SpaceEngineersScript
+Скрипты для игры
