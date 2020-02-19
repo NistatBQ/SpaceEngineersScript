@@ -25,34 +25,44 @@ namespace Horizont
         IMyShipController cockpit;
         IMyGyro gyro;
 
+        bool Stop;
+
         Program()
         {
             cockpit = GridTerminalSystem.GetBlockWithName("Cockpit") as IMyShipController;
-            gyro = GridTerminalSystem.GetBlockGroupWithName("Gyro") as IMyGyro;
+            gyro = GridTerminalSystem.GetBlockWithName("Gyro") as IMyGyro;
             Runtime.UpdateFrequency = UpdateFrequency.Update1;
         }
 
         void Main(string arg)
         {
-            switch(arg)
-            {
-                case ("Start"):
-                    gyro.GyroOverride = true;
-                    break;
-                case ("Stop"):
-                    gyro.GyroOverride = false;
-                    break;
-                default:
-                    gyro.GyroOverride = false;
-                    break;
-            }            
-            
             Vector3D GravVector = cockpit.GetNaturalGravity();
             float Pitch = (float)GravVector.Dot(cockpit.WorldMatrix.Backward);
-            float Roll = (float)GravVector.Dot(cockpit.WorldMatrix.Left);            
+            float Roll = (float)GravVector.Dot(cockpit.WorldMatrix.Left);
 
-            gyro.Pitch = Pitch;
-            gyro.Roll = Roll;
+            gyro.Pitch = -Pitch;
+            gyro.Roll = -Roll;
+
+            switch (arg)
+            {
+                case "Start":
+                    {
+                        Stop = false;
+                        break;
+                    }
+                case "Stop":
+                    {
+                        Stop = true;
+                        break;
+                    }
+                default:
+                    break;
+            }
+            
+            if (Stop)
+                gyro.GyroOverride = false;
+            else
+                gyro.GyroOverride = true;            
         }
     }
 }
