@@ -21,20 +21,13 @@ namespace IngameScript
 {
     partial class Program : MyGridProgram
     {
-        
-        public Program()
-        {
-            
-        }
+        IMyCockpit cockpit;
+        IMyThrust thrust;
 
-        public void Save()
+        void Main()
         {
-            
-        }
-
-        public void Main(string argument, UpdateType updateSource)
-        {
-            
+            cockpit = GridTerminalSystem.GetBlockWithName("Cockpit") as IMyCockpit;            
         }
     }
+    
 }
