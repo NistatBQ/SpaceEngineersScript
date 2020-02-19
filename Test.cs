@@ -26,7 +26,7 @@ namespace Test
                
         public void Main(string argument)
         {
-            
+            rew
         }        
     }
 }
