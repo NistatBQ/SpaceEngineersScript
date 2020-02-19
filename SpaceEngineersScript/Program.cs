@@ -26,7 +26,8 @@ namespace IngameScript
 
         void Main()
         {
-            cockpit = GridTerminalSystem.GetBlockWithName("Cockpit") as IMyCockpit;            
+            cockpit = GridTerminalSystem.GetBlockWithName("Cockpit") as IMyCockpit;
+            cockpit.
         }
     }
     
