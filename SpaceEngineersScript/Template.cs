@@ -27,7 +27,7 @@ namespace Template
         }
         void Main()
         {
-
+            rew
         }
     }
     
