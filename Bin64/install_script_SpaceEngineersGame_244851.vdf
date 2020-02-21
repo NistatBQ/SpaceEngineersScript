@@ -1,0 +1,17 @@
+"InstallScript"
+{
+	"Run Process"
+	{
+		"SpaceEngineers_ColdStart"
+		{
+			"HasRunKey"		"HKEY_CURRENT_USER\\Software\\Valve\\Steam\\Apps\\244850\\Coldstart"
+			"process 1"		"%INSTALLDIR%\\Bin64\\SpaceEngineers.exe"
+			"command 1"		"-coldstart"
+			"NoCleanUp"		"1"
+		}
+	}
+}
+"kvsignatures"
+{
+	"InstallScript"		"0006a4728368b40baccbce0cdc678194593c6fedb3456c7b74c3daa50c430d37cac09fc7d63d79af7cf33ac76a21ce72f59a0e74643b10a956cc700f525a3d59cea0fd18274a08547bd6cfb6b881ae2bba12735276ee844c38f4ec99db343f690de562ca58842a4effc841c631c35c1964b563058723345a8c06c99b20275a0e"
+}
