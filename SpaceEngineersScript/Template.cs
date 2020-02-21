@@ -19,15 +19,21 @@ using VRageMath;
 
 namespace Template
 {
-    public sealed class Program : MyGridProgram
+    public sealed class Template : MyGridProgram
     {
+
+        IMyShipController cockpit;
+        IMyGyro gyro;
+
         Program()
         {
-
+            cockpit = GridTerminalSystem.GetBlockWithName("Cockpit") as IMyShipController;
+            gyro = GridTerminalSystem.GetBlockWithName("Gyro") as IMyGyro;
+            Runtime.UpdateFrequency = UpdateFrequency.Update1;
         }
         void Main()
         {
-            rew 212
+            gyro.GyroOverride = true;
         }
     }
     
