@@ -1,0 +1,568 @@
+﻿<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{C0BE5672-1F03-496A-99A7-0EE82645D8C3}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <NoStandardLibraries>false</NoStandardLibraries>
+    <AssemblyName>ClassLibrary</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <RootNamespace>SETest</RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Sandbox.Game, Version=0.1.1.0, Culture=neutral, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\SE\Bin64\Sandbox.Game.dll</HintPath>
+    </Reference>
+    <Reference Include="Sandbox.Game.XmlSerializers, Version=0.1.1.0, Culture=neutral, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\SE\Bin64\Sandbox.Game.XmlSerializers.dll</HintPath>
+    </Reference>
+    <Reference Include="Sandbox.Graphics, Version=0.1.1.0, Culture=neutral, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\SE\Bin64\Sandbox.Graphics.dll</HintPath>
+    </Reference>
+    <Reference Include="Sandbox.RenderDirect, Version=1.0.0.0, Culture=neutral, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\SE\Bin64\Sandbox.RenderDirect.dll</HintPath>
+    </Reference>
+    <Reference Include="SpaceEngineers.Game, Version=1.0.0.0, Culture=neutral, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\SE\Bin64\SpaceEngineers.Game.dll</HintPath>
+    </Reference>
+    <Reference Include="SpaceEngineers.ObjectBuilders, Version=1.0.0.0, Culture=neutral, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\SE\Bin64\SpaceEngineers.ObjectBuilders.dll</HintPath>
+    </Reference>
+    <Reference Include="SpaceEngineers.ObjectBuilders.XmlSerializers, Version=1.0.0.0, Culture=neutral, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\SE\Bin64\SpaceEngineers.ObjectBuilders.XmlSerializers.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="VRage.Audio, Version=1.0.0.0, Culture=neutral, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\SE\Bin64\VRage.Audio.dll</HintPath>
+    </Reference>
+    <Reference Include="VRage.Game, Version=1.0.0.0, Culture=neutral, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\SE\Bin64\VRage.Game.dll</HintPath>
+    </Reference>
+    <Reference Include="VRage.Input, Version=1.0.0.0, Culture=neutral, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\SE\Bin64\VRage.Input.dll</HintPath>
+    </Reference>
+    <Reference Include="VRage.Math, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\SE\Bin64\VRage.Math.dll</HintPath>
+    </Reference>
+    <Reference Include="VRage.Mod.Io, Version=1.0.0.0, Culture=neutral, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\SE\Bin64\VRage.Mod.Io.dll</HintPath>
+    </Reference>
+    <Reference Include="VRage.NativeAftermath, Version=0.0.0.0, Culture=neutral, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\SE\Bin64\VRage.NativeAftermath.dll</HintPath>
+    </Reference>
+    <Reference Include="VRage.NativeWrapper, Version=0.1.1.0, Culture=neutral, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\SE\Bin64\VRage.NativeWrapper.dll</HintPath>
+    </Reference>
+    <Reference Include="VRage.Network, Version=1.0.53.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\SE\Bin64\VRage.Network.dll</HintPath>
+    </Reference>
+    <Reference Include="VRage.Platform.Windows, Version=1.0.0.0, Culture=neutral, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\SE\Bin64\VRage.Platform.Windows.dll</HintPath>
+    </Reference>
+    <Reference Include="VRage.Render, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\SE\Bin64\VRage.Render.dll</HintPath>
+    </Reference>
+    <Reference Include="VRage.Render11, Version=1.0.0.0, Culture=neutral, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\SE\Bin64\VRage.Render11.dll</HintPath>
+    </Reference>
+    <Reference Include="VRage.Scripting, Version=1.0.0.0, Culture=neutral, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\SE\Bin64\VRage.Scripting.dll</HintPath>
+    </Reference>
+    <Reference Include="VRage.Steam, Version=1.0.0.0, Culture=neutral, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\SE\Bin64\VRage.Steam.dll</HintPath>
+    </Reference>
+    <Reference Include="VRage.UserInterface, Version=1.0.0.0, Culture=neutral, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\SE\Bin64\VRage.UserInterface.dll</HintPath>
+    </Reference>
+    <Reference Include="VRage.XmlSerializers, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\SE\Bin64\VRage.XmlSerializers.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include=".gitattributes" />
+    <None Include=".gitignore" />
+    <None Include=".git\COMMIT_EDITMSG" />
+    <None Include=".git\config" />
+    <None Include=".git\description" />
+    <None Include=".git\FETCH_HEAD" />
+    <None Include=".git\HEAD" />
+    <None Include=".git\hooks\applypatch-msg.sample" />
+    <None Include=".git\hooks\commit-msg.sample" />
+    <None Include=".git\hooks\fsmonitor-watchman.sample" />
+    <None Include=".git\hooks\post-update.sample" />
+    <None Include=".git\hooks\pre-applypatch.sample" />
+    <None Include=".git\hooks\pre-commit.sample" />
+    <None Include=".git\hooks\pre-push.sample" />
+    <None Include=".git\hooks\pre-rebase.sample" />
+    <None Include=".git\hooks\pre-receive.sample" />
+    <None Include=".git\hooks\prepare-commit-msg.sample" />
+    <None Include=".git\hooks\update.sample" />
+    <None Include=".git\index" />
+    <None Include=".git\info\exclude" />
+    <None Include=".git\logs\HEAD" />
+    <None Include=".git\logs\refs\heads\master" />
+    <None Include=".git\logs\refs\remotes\origin\HEAD" />
+    <None Include=".git\logs\refs\remotes\origin\master" />
+    <None Include=".git\objects\02\ce241591895a2a2837a63a296f25a692940aa2" />
+    <None Include=".git\objects\06\9ff6583d7ad569d8c97edc0508ad78004615dc" />
+    <None Include=".git\objects\07\d0ddb04560184b05729cac55e14574edc9b9bd" />
+    <None Include=".git\objects\08\be131ef05796659df5688de0c052935b202ca5" />
+    <None Include=".git\objects\09\c9c3cf210b938358cce37f7adaa4adb458a8b0" />
+    <None Include=".git\objects\0a\b4ddaff829753832790565197a15bca55e87b1" />
+    <None Include=".git\objects\0d\8f54bdb8f4f4d7c7e17fd551196209c181a4d4" />
+    <None Include=".git\objects\0f\d3bfd32092d1a610c8f59004e7864972f75715" />
+    <None Include=".git\objects\10\5b6f3a5d0eda780ed25db7c8b2c066d5bc1e71" />
+    <None Include=".git\objects\11\aa6a712516e4e4866de0425b8f027071452f35" />
+    <None Include=".git\objects\11\b9d5d3e863f60dcb0bcd73db94ecf8df8fee12" />
+    <None Include=".git\objects\13\21fb59677cc678716b9d87f144cbfb3f1a356c" />
+    <None Include=".git\objects\13\a8f6b88c0882b6edca0837c9fbceb69065c7cc" />
+    <None Include=".git\objects\14\a0bf27adcea805054438e1aeca6963304bd2d9" />
+    <None Include=".git\objects\15\898651797f3a3c43016fad96df72090d3e3a10" />
+    <None Include=".git\objects\1c\c99d473ffa027b47ac0bd06a6595c97b00e34f" />
+    <None Include=".git\objects\1f\f0c423042b46cb1d617b81efb715defbe8054d" />
+    <None Include=".git\objects\22\fe8153ba2407fed60362675fa052c45081476e" />
+    <None Include=".git\objects\25\30b6d1c1ecb994496806b6ce1ac6fd42dbb3f8" />
+    <None Include=".git\objects\2a\86dbe6e35b359d826e0825cf0cac8e5d0d947b" />
+    <None Include=".git\objects\2c\a4686693012effba9fe7e3bde4e0875d656c4b" />
+    <None Include=".git\objects\2e\d5d5b90eeec5c6f3bf8f59959991d8131d6f74" />
+    <None Include=".git\objects\32\d438723d4d5d65c9b7046f2dfdbfb9c18bc68f" />
+    <None Include=".git\objects\34\739c4289de7f3d81a19fee192895609d858e94" />
+    <None Include=".git\objects\35\61ae788701b46fe110e67ee9eade304b83a5ae" />
+    <None Include=".git\objects\39\b82c83acc6ef40ebb241a94def236113d402c9" />
+    <None Include=".git\objects\3b\3b19bcd07512dfa89d3bfe882f051dd616cdfe" />
+    <None Include=".git\objects\3c\5bd53e90e743be0d554e6747f5e1927752cfa5" />
+    <None Include=".git\objects\43\342ed3d98ea2fad7a8f2ccd62f457d951e1cb9" />
+    <None Include=".git\objects\43\a588df7bb7686e4a23467ff41d34e9a3a1d3a8" />
+    <None Include=".git\objects\44\39fff2e1371241dee5da7d7c2bcdf7c16e9579" />
+    <None Include=".git\objects\44\f7b4c0ece16c5d64703908926ab636cef4e717" />
+    <None Include=".git\objects\46\b47d25881f0298d8c2e6c8a89322647003ecb6" />
+    <None Include=".git\objects\4b\825dc642cb6eb9a060e54bf8d69288fbee4904" />
+    <None Include=".git\objects\51\b3e49703c3ec5e9b4efb2ed060c64a8dd70ac1" />
+    <None Include=".git\objects\57\428c350dada7a5693dff9be8952f93c295995a" />
+    <None Include=".git\objects\58\145c2b056c8dce3f1f49cbfca6d26d5a67af24" />
+    <None Include=".git\objects\5a\172cea6b7e05311eee682c86fc6c5faa025d78" />
+    <None Include=".git\objects\5a\1b39fc91cff7b0beee4dfb82a9eec5c92a7d05" />
+    <None Include=".git\objects\5a\d356f03a9ff0ae6f87770657051b51d6ac841b" />
+    <None Include=".git\objects\5b\81490e801a3893e408aa8b418ecc019fdf8032" />
+    <None Include=".git\objects\5f\05800351b1134e6101ad488f50886bc2589635" />
+    <None Include=".git\objects\6a\b298acde681acccdcd64027399e201813d7c4c" />
+    <None Include=".git\objects\6e\5f8d00e59fb26da18a07a88b1b39ac11072f58" />
+    <None Include=".git\objects\72\ea4a9b3d91b94821a7b3e77777fa934e624427" />
+    <None Include=".git\objects\7c\b674212727302502cf4447612e891feaccffcd" />
+    <None Include=".git\objects\7e\13fc3e90d800b088c81a941a59d59debcc5741" />
+    <None Include=".git\objects\7f\a29ce913cfb878f0c8363ef31e6906a206940b" />
+    <None Include=".git\objects\81\ecdb42d1de758336b98e629f3bc44cf8038d2c" />
+    <None Include=".git\objects\82\75f57a53b9c228f6fa403c0017452bbcfd1db0" />
+    <None Include=".git\objects\85\6becac2c7ab731639d2acf7dc72ca49e15bf08" />
+    <None Include=".git\objects\88\914f3179d255d94c3f445281dbddbb3cebca65" />
+    <None Include=".git\objects\8b\0ad3f05e44d37e7ab20431be1c5796aab51d6b" />
+    <None Include=".git\objects\8b\356b57ea8b4bcddbe62e827692c456d2cb7772" />
+    <None Include=".git\objects\8b\727919b37110e192d273ca31b29a0dc052baed" />
+    <None Include=".git\objects\91\a9534e72827eb840e4563076d95b605cfd0046" />
+    <None Include=".git\objects\97\e062614aa746bef5616902f60ecb7b45e78fcc" />
+    <None Include=".git\objects\97\f69978737844d2f8f01963bc35bbda95c5001b" />
+    <None Include=".git\objects\98\40c101b00ae27d1791f23701692a96e2d66433" />
+    <None Include=".git\objects\9b\1d0c6388771bb40e04b8df641b73e12be4462c" />
+    <None Include=".git\objects\9d\ae636c3c4b33b3f05a4a7ae52ae8cafa550afd" />
+    <None Include=".git\objects\9d\b0742ee301896f2e5aa15a87e5d30e08d203e1" />
+    <None Include=".git\objects\a5\5d1b3f75ea8f78fc20fe36c8b3d6407ca387ad" />
+    <None Include=".git\objects\a7\f93d3f6f8b229a601cee7ba303f567166332a5" />
+    <None Include=".git\objects\ab\19ed09b3be83dc169ea6ab3ebed37e08fd92fc" />
+    <None Include=".git\objects\b4\9f74a05ae027e17894d17fd557555c4edaa612" />
+    <None Include=".git\objects\b7\ab97586b600bceba3267991df25291ee31ad6b" />
+    <None Include=".git\objects\bb\15ad92196a1c8097964bb6669b1ac44da0326f" />
+    <None Include=".git\objects\bb\afb3d85babbf39eeb8d804ad341024b6f6e6db" />
+    <None Include=".git\objects\bc\0fcfeee202ffb6c3f832a1d5611bc85608d729" />
+    <None Include=".git\objects\bc\cc402b24df131aef4c7903151b2119189aff12" />
+    <None Include=".git\objects\c7\e5b63ef0a7483d7ecb86a86da7bd1a543e1d5f" />
+    <None Include=".git\objects\c8\55ff9bcc7c1df842f0e5b4695db9515c272bdc" />
+    <None Include=".git\objects\ca\06c8c0cc7f5ee7fa3105be2b1e48155405929d" />
+    <None Include=".git\objects\ce\210933e16498a8595f8f7e03c617dc3820e24e" />
+    <None Include=".git\objects\ce\28a3bfb229842b8288e0293e5ee6f186cebcb4" />
+    <None Include=".git\objects\d7\a6d9dbb163014f814477a75f0a01d0dda1717b" />
+    <None Include=".git\objects\d9\4a3ba97b39423027beb337f4c7216169853c8a" />
+    <None Include=".git\objects\dd\868865ab2e00acb15478096e0e84c95921265b" />
+    <None Include=".git\objects\df\4ed0ae6b3d5316f74dc1462e2b801ce36652f2" />
+    <None Include=".git\objects\df\cfd56f444f9ae40e1082c07fe254cc547136cf" />
+    <None Include=".git\objects\e5\19c1f9839cb021f01d00f7c3c348551bc97e9f" />
+    <None Include=".git\objects\e6\9de29bb2d1d6434b8b29ae775ad8c2e48c5391" />
+    <None Include=".git\objects\ed\30ab7e79612895d5b16e3d0fef705fda59b791" />
+    <None Include=".git\objects\ee\61f93ffd4e1ed3d7c59f9f6d2147310b973c76" />
+    <None Include=".git\objects\ef\7e7d8ce808e93e5d5d8e3c64cc2d446b9be2b3" />
+    <None Include=".git\objects\f7\0beca4338ae882a5751611bc80e1c8f3e194c4" />
+    <None Include=".git\objects\f9\9846e45e360d85d3885a8a6dfb0512946bff58" />
+    <None Include=".git\objects\f9\d4dc3bcd45fbfe66d62e3ef289ca5326f293d3" />
+    <None Include=".git\objects\fa\4ab2f3d77d15b5ff447b1ac3c10b7efae5b3f1" />
+    <None Include=".git\objects\fb\8ed22f0e4a2159089660c476829074bebc99d2" />
+    <None Include=".git\objects\fd\0c655071ce94540a186882c927b46314945c63" />
+    <None Include=".git\objects\fe\0a2a4350e394046145aa6e842b5e17af9eb345" />
+    <None Include=".git\objects\fe\5435f417ee966b1a220495a98f986d38e31de4" />
+    <None Include=".git\objects\ff\f6b66783108175e8955a42711a19d2c60f0f4e" />
+    <None Include=".git\ORIG_HEAD" />
+    <None Include=".git\packed-refs" />
+    <None Include=".git\refs\heads\master" />
+    <None Include=".git\refs\remotes\origin\HEAD" />
+    <None Include=".git\refs\remotes\origin\master" />
+    <None Include=".vs\slnx.sqlite" />
+    <None Include=".vs\SpaceEngineersScript\v16\.suo" />
+    <None Include=".vs\tasks.vs.json" />
+    <None Include=".vs\VSWorkspaceState.json" />
+    <None Include="Bin64\debug.log" />
+    <None Include="Bin64\install_script_SpaceEngineersGame_244851.vdf" />
+    <None Include="Bin64\Sandbox.Game.dll.config" />
+    <None Include="Bin64\SpaceEngineers.exe.config" />
+    <None Include="Bin64\VRage.Game.dll.config" />
+    <None Include="MDK\MDK.options.props" />
+    <None Include="MDK\MDK.paths.props" />
+    <None Include="MDK\whitelist.cache" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="MDK\Bootstrapper.cs" />
+    <Compile Include="Program %282%29.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="SpaceEngineersScript\3rotturret.cs" />
+    <Compile Include="SpaceEngineersScript\Cargo.cs" />
+    <Compile Include="SpaceEngineersScript\CargoOre.cs" />
+    <Compile Include="SpaceEngineersScript\Horizont.cs" />
+    <Compile Include="SpaceEngineersScript\inventory broken.cs" />
+    <Compile Include="SpaceEngineersScript\Program.cs" />
+    <Compile Include="SpaceEngineersScript\Solar Panel 2 rotors.cs" />
+    <Compile Include="SpaceEngineersScript\TargetPoint.cs" />
+    <Compile Include="SpaceEngineersScript\Template.cs" />
+    <Compile Include="Test.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include=".git\ms-persist.xml" />
+    <Content Include="Bin64\AnselSDK64.dll" />
+    <Content Include="Bin64\ca-AD\SpaceEngineers.resources.dll" />
+    <Content Include="Bin64\ca-AD\VRage.Game.resources.dll" />
+    <Content Include="Bin64\cs-CZ\SpaceEngineers.resources.dll" />
+    <Content Include="Bin64\cs-CZ\VRage.Game.resources.dll" />
+    <Content Include="Bin64\cs\Microsoft.CodeAnalysis.CSharp.resources.dll" />
+    <Content Include="Bin64\cs\Microsoft.CodeAnalysis.resources.dll" />
+    <Content Include="Bin64\d3dcompiler_47.dll" />
+    <Content Include="Bin64\d3dcsx_47.dll" />
+    <Content Include="Bin64\D3DX9_43.dll" />
+    <Content Include="Bin64\da\SpaceEngineers.resources.dll" />
+    <Content Include="Bin64\da\VRage.Game.resources.dll" />
+    <Content Include="Bin64\de\Microsoft.CodeAnalysis.CSharp.resources.dll" />
+    <Content Include="Bin64\de\Microsoft.CodeAnalysis.resources.dll" />
+    <Content Include="Bin64\de\SpaceEngineers.resources.dll" />
+    <Content Include="Bin64\de\VRage.Game.resources.dll" />
+    <Content Include="Bin64\DirectShowLib.dll" />
+    <Content Include="Bin64\EmptyKeys.UserInterface.Core.dll" />
+    <Content Include="Bin64\EmptyKeys.UserInterface.Core.xml" />
+    <Content Include="Bin64\EmptyKeys.UserInterface.Debug.dll" />
+    <Content Include="Bin64\EmptyKeys.UserInterface.dll" />
+    <Content Include="Bin64\EmptyKeys.UserInterface.xml" />
+    <Content Include="Bin64\es-419\SpaceEngineers.resources.dll" />
+    <Content Include="Bin64\es-419\VRage.Game.resources.dll" />
+    <Content Include="Bin64\es\Microsoft.CodeAnalysis.CSharp.resources.dll" />
+    <Content Include="Bin64\es\Microsoft.CodeAnalysis.resources.dll" />
+    <Content Include="Bin64\es\SpaceEngineers.resources.dll" />
+    <Content Include="Bin64\es\VRage.Game.resources.dll" />
+    <Content Include="Bin64\et-EE\SpaceEngineers.resources.dll" />
+    <Content Include="Bin64\et-EE\VRage.Game.resources.dll" />
+    <Content Include="Bin64\eula.txt" />
+    <Content Include="Bin64\fi\SpaceEngineers.resources.dll" />
+    <Content Include="Bin64\fi\VRage.Game.resources.dll" />
+    <Content Include="Bin64\fr\Microsoft.CodeAnalysis.CSharp.resources.dll" />
+    <Content Include="Bin64\fr\Microsoft.CodeAnalysis.resources.dll" />
+    <Content Include="Bin64\fr\SpaceEngineers.resources.dll" />
+    <Content Include="Bin64\fr\VRage.Game.resources.dll" />
+    <Content Include="Bin64\GameAnalytics.Mono.dll" />
+    <Content Include="Bin64\GFSDK_Aftermath_Lib.x64.dll" />
+    <Content Include="Bin64\Havok.dll" />
+    <Content Include="Bin64\HavokWrapper.dll" />
+    <Content Include="Bin64\hr-HR\SpaceEngineers.resources.dll" />
+    <Content Include="Bin64\hr-HR\VRage.Game.resources.dll" />
+    <Content Include="Bin64\hu-HU\SpaceEngineers.resources.dll" />
+    <Content Include="Bin64\hu-HU\VRage.Game.resources.dll" />
+    <Content Include="Bin64\is-IS\SpaceEngineers.resources.dll" />
+    <Content Include="Bin64\is-IS\VRage.Game.resources.dll" />
+    <Content Include="Bin64\it\Microsoft.CodeAnalysis.CSharp.resources.dll" />
+    <Content Include="Bin64\it\Microsoft.CodeAnalysis.resources.dll" />
+    <Content Include="Bin64\it\SpaceEngineers.resources.dll" />
+    <Content Include="Bin64\it\VRage.Game.resources.dll" />
+    <Content Include="Bin64\ja\Microsoft.CodeAnalysis.CSharp.resources.dll" />
+    <Content Include="Bin64\ja\Microsoft.CodeAnalysis.resources.dll" />
+    <Content Include="Bin64\ko\Microsoft.CodeAnalysis.CSharp.resources.dll" />
+    <Content Include="Bin64\ko\Microsoft.CodeAnalysis.resources.dll" />
+    <Content Include="Bin64\lv\SpaceEngineers.resources.dll" />
+    <Content Include="Bin64\lv\VRage.Game.resources.dll" />
+    <Content Include="Bin64\Microsoft.CodeAnalysis.CSharp.dll" />
+    <Content Include="Bin64\Microsoft.CodeAnalysis.dll" />
+    <Content Include="Bin64\Microsoft.Win32.Primitives.dll" />
+    <Content Include="Bin64\msvcp110.dll" />
+    <Content Include="Bin64\msvcp120.dll" />
+    <Content Include="Bin64\msvcr110.dll" />
+    <Content Include="Bin64\msvcr120.dll" />
+    <Content Include="Bin64\netstandard.dll" />
+    <Content Include="Bin64\NLog.dll" />
+    <Content Include="Bin64\nl\SpaceEngineers.resources.dll" />
+    <Content Include="Bin64\nl\VRage.Game.resources.dll" />
+    <Content Include="Bin64\no\SpaceEngineers.resources.dll" />
+    <Content Include="Bin64\no\VRage.Game.resources.dll" />
+    <Content Include="Bin64\pl-PL\SpaceEngineers.resources.dll" />
+    <Content Include="Bin64\pl-PL\VRage.Game.resources.dll" />
+    <Content Include="Bin64\pl\Microsoft.CodeAnalysis.CSharp.resources.dll" />
+    <Content Include="Bin64\pl\Microsoft.CodeAnalysis.resources.dll" />
+    <Content Include="Bin64\postbuild.txt" />
+    <Content Include="Bin64\ProtoBuf.Net.Core.dll" />
+    <Content Include="Bin64\ProtoBuf.Net.dll" />
+    <Content Include="Bin64\pt-BR\Microsoft.CodeAnalysis.CSharp.resources.dll" />
+    <Content Include="Bin64\pt-BR\Microsoft.CodeAnalysis.resources.dll" />
+    <Content Include="Bin64\pt-BR\SpaceEngineers.resources.dll" />
+    <Content Include="Bin64\pt-BR\VRage.Game.resources.dll" />
+    <Content Include="Bin64\RecastDetour.dll" />
+    <Content Include="Bin64\RecastDetourWrapper.dll" />
+    <Content Include="Bin64\RestSharp.dll" />
+    <Content Include="Bin64\ro\SpaceEngineers.resources.dll" />
+    <Content Include="Bin64\ro\VRage.Game.resources.dll" />
+    <Content Include="Bin64\ru\Microsoft.CodeAnalysis.CSharp.resources.dll" />
+    <Content Include="Bin64\ru\Microsoft.CodeAnalysis.resources.dll" />
+    <Content Include="Bin64\ru\SpaceEngineers.resources.dll" />
+    <Content Include="Bin64\ru\VRage.Game.resources.dll" />
+    <Content Include="Bin64\Sandbox.Common.dll" />
+    <Content Include="Bin64\Sandbox.Common.xml" />
+    <Content Include="Bin64\Sandbox.Game.dll" />
+    <Content Include="Bin64\Sandbox.Game.XmlSerializers.dll" />
+    <Content Include="Bin64\Sandbox.Graphics.dll" />
+    <Content Include="Bin64\Sandbox.RenderDirect.dll" />
+    <Content Include="Bin64\SharpDX.D3DCompiler.dll" />
+    <Content Include="Bin64\SharpDX.D3DCompiler.xml" />
+    <Content Include="Bin64\SharpDX.Desktop.dll" />
+    <Content Include="Bin64\SharpDX.Direct3D11.dll" />
+    <Content Include="Bin64\SharpDX.Direct3D11.xml" />
+    <Content Include="Bin64\SharpDX.DirectInput.dll" />
+    <Content Include="Bin64\SharpDX.dll" />
+    <Content Include="Bin64\SharpDX.DXGI.dll" />
+    <Content Include="Bin64\SharpDX.DXGI.xml" />
+    <Content Include="Bin64\SharpDX.XAudio2.dll" />
+    <Content Include="Bin64\SharpDX.XAudio2.xml" />
+    <Content Include="Bin64\SixLabors.Core.dll" />
+    <Content Include="Bin64\SixLabors.Core.xml" />
+    <Content Include="Bin64\SixLabors.ImageSharp.dll" />
+    <Content Include="Bin64\SixLabors.ImageSharp.xml" />
+    <Content Include="Bin64\sk-SK\SpaceEngineers.resources.dll" />
+    <Content Include="Bin64\sk-SK\VRage.Game.resources.dll" />
+    <Content Include="Bin64\SpaceEngineers.exe" />
+    <Content Include="Bin64\SpaceEngineers.Game.dll" />
+    <Content Include="Bin64\SpaceEngineers.Game.xml" />
+    <Content Include="Bin64\SpaceEngineers.ico" />
+    <Content Include="Bin64\SpaceEngineers.ObjectBuilders.dll" />
+    <Content Include="Bin64\SpaceEngineers.ObjectBuilders.xml" />
+    <Content Include="Bin64\SpaceEngineers.ObjectBuilders.XmlSerializers.dll" />
+    <Content Include="Bin64\Steamworks.NET.dll" />
+    <Content Include="Bin64\steam_api64.dll" />
+    <Content Include="Bin64\sv\SpaceEngineers.resources.dll" />
+    <Content Include="Bin64\sv\VRage.Game.resources.dll" />
+    <Content Include="Bin64\System.AppContext.dll" />
+    <Content Include="Bin64\System.Buffers.dll" />
+    <Content Include="Bin64\System.Collections.Concurrent.dll" />
+    <Content Include="Bin64\System.Collections.dll" />
+    <Content Include="Bin64\System.Collections.Immutable.dll" />
+    <Content Include="Bin64\System.Collections.NonGeneric.dll" />
+    <Content Include="Bin64\System.Collections.Specialized.dll" />
+    <Content Include="Bin64\System.ComponentModel.Annotations.dll" />
+    <Content Include="Bin64\System.ComponentModel.dll" />
+    <Content Include="Bin64\System.ComponentModel.EventBasedAsync.dll" />
+    <Content Include="Bin64\System.ComponentModel.Primitives.dll" />
+    <Content Include="Bin64\System.ComponentModel.TypeConverter.dll" />
+    <Content Include="Bin64\System.Console.dll" />
+    <Content Include="Bin64\System.Data.Common.dll" />
+    <Content Include="Bin64\System.Data.SQLite.dll" />
+    <Content Include="Bin64\System.Diagnostics.Contracts.dll" />
+    <Content Include="Bin64\System.Diagnostics.Debug.dll" />
+    <Content Include="Bin64\System.Diagnostics.FileVersionInfo.dll" />
+    <Content Include="Bin64\System.Diagnostics.Process.dll" />
+    <Content Include="Bin64\System.Diagnostics.StackTrace.dll" />
+    <Content Include="Bin64\System.Diagnostics.TextWriterTraceListener.dll" />
+    <Content Include="Bin64\System.Diagnostics.Tools.dll" />
+    <Content Include="Bin64\System.Diagnostics.TraceSource.dll" />
+    <Content Include="Bin64\System.Diagnostics.Tracing.dll" />
+    <Content Include="Bin64\System.Drawing.Primitives.dll" />
+    <Content Include="Bin64\System.Dynamic.Runtime.dll" />
+    <Content Include="Bin64\System.Globalization.Calendars.dll" />
+    <Content Include="Bin64\System.Globalization.dll" />
+    <Content Include="Bin64\System.Globalization.Extensions.dll" />
+    <Content Include="Bin64\System.IO.Compression.dll" />
+    <Content Include="Bin64\System.IO.Compression.ZipFile.dll" />
+    <Content Include="Bin64\System.IO.dll" />
+    <Content Include="Bin64\System.IO.FileSystem.dll" />
+    <Content Include="Bin64\System.IO.FileSystem.DriveInfo.dll" />
+    <Content Include="Bin64\System.IO.FileSystem.Primitives.dll" />
+    <Content Include="Bin64\System.IO.FileSystem.Watcher.dll" />
+    <Content Include="Bin64\System.IO.IsolatedStorage.dll" />
+    <Content Include="Bin64\System.IO.MemoryMappedFiles.dll" />
+    <Content Include="Bin64\System.IO.Pipes.dll" />
+    <Content Include="Bin64\System.IO.UnmanagedMemoryStream.dll" />
+    <Content Include="Bin64\System.Linq.dll" />
+    <Content Include="Bin64\System.Linq.Expressions.dll" />
+    <Content Include="Bin64\System.Linq.Parallel.dll" />
+    <Content Include="Bin64\System.Linq.Queryable.dll" />
+    <Content Include="Bin64\System.Memory.dll" />
+    <Content Include="Bin64\System.Net.Http.dll" />
+    <Content Include="Bin64\System.Net.NameResolution.dll" />
+    <Content Include="Bin64\System.Net.NetworkInformation.dll" />
+    <Content Include="Bin64\System.Net.Ping.dll" />
+    <Content Include="Bin64\System.Net.Primitives.dll" />
+    <Content Include="Bin64\System.Net.Requests.dll" />
+    <Content Include="Bin64\System.Net.Security.dll" />
+    <Content Include="Bin64\System.Net.Sockets.dll" />
+    <Content Include="Bin64\System.Net.WebHeaderCollection.dll" />
+    <Content Include="Bin64\System.Net.WebSockets.Client.dll" />
+    <Content Include="Bin64\System.Net.WebSockets.dll" />
+    <Content Include="Bin64\System.Numerics.Vectors.dll" />
+    <Content Include="Bin64\System.ObjectModel.dll" />
+    <Content Include="Bin64\System.Reflection.dll" />
+    <Content Include="Bin64\System.Reflection.Extensions.dll" />
+    <Content Include="Bin64\System.Reflection.Metadata.dll" />
+    <Content Include="Bin64\System.Reflection.Primitives.dll" />
+    <Content Include="Bin64\System.Resources.Reader.dll" />
+    <Content Include="Bin64\System.Resources.ResourceManager.dll" />
+    <Content Include="Bin64\System.Resources.Writer.dll" />
+    <Content Include="Bin64\System.Runtime.CompilerServices.Unsafe.dll" />
+    <Content Include="Bin64\System.Runtime.CompilerServices.VisualC.dll" />
+    <Content Include="Bin64\System.Runtime.dll" />
+    <Content Include="Bin64\System.Runtime.Extensions.dll" />
+    <Content Include="Bin64\System.Runtime.Handles.dll" />
+    <Content Include="Bin64\System.Runtime.InteropServices.dll" />
+    <Content Include="Bin64\System.Runtime.InteropServices.RuntimeInformation.dll" />
+    <Content Include="Bin64\System.Runtime.Numerics.dll" />
+    <Content Include="Bin64\System.Runtime.Serialization.Formatters.dll" />
+    <Content Include="Bin64\System.Runtime.Serialization.Json.dll" />
+    <Content Include="Bin64\System.Runtime.Serialization.Primitives.dll" />
+    <Content Include="Bin64\System.Runtime.Serialization.Xml.dll" />
+    <Content Include="Bin64\System.Security.Claims.dll" />
+    <Content Include="Bin64\System.Security.Cryptography.Algorithms.dll" />
+    <Content Include="Bin64\System.Security.Cryptography.Csp.dll" />
+    <Content Include="Bin64\System.Security.Cryptography.Encoding.dll" />
+    <Content Include="Bin64\System.Security.Cryptography.Primitives.dll" />
+    <Content Include="Bin64\System.Security.Cryptography.X509Certificates.dll" />
+    <Content Include="Bin64\System.Security.Principal.dll" />
+    <Content Include="Bin64\System.Security.SecureString.dll" />
+    <Content Include="Bin64\System.Text.Encoding.CodePages.dll" />
+    <Content Include="Bin64\System.Text.Encoding.dll" />
+    <Content Include="Bin64\System.Text.Encoding.Extensions.dll" />
+    <Content Include="Bin64\System.Text.RegularExpressions.dll" />
+    <Content Include="Bin64\System.Threading.dll" />
+    <Content Include="Bin64\System.Threading.Overlapped.dll" />
+    <Content Include="Bin64\System.Threading.Tasks.dll" />
+    <Content Include="Bin64\System.Threading.Tasks.Extensions.dll" />
+    <Content Include="Bin64\System.Threading.Tasks.Parallel.dll" />
+    <Content Include="Bin64\System.Threading.Thread.dll" />
+    <Content Include="Bin64\System.Threading.ThreadPool.dll" />
+    <Content Include="Bin64\System.Threading.Timer.dll" />
+    <Content Include="Bin64\System.ValueTuple.dll" />
+    <Content Include="Bin64\System.Xml.ReaderWriter.dll" />
+    <Content Include="Bin64\System.Xml.XDocument.dll" />
+    <Content Include="Bin64\System.Xml.XmlDocument.dll" />
+    <Content Include="Bin64\System.Xml.XmlSerializer.dll" />
+    <Content Include="Bin64\System.Xml.XPath.dll" />
+    <Content Include="Bin64\System.Xml.XPath.XDocument.dll" />
+    <Content Include="Bin64\tr-TR\SpaceEngineers.resources.dll" />
+    <Content Include="Bin64\tr-TR\VRage.Game.resources.dll" />
+    <Content Include="Bin64\tr\Microsoft.CodeAnalysis.CSharp.resources.dll" />
+    <Content Include="Bin64\tr\Microsoft.CodeAnalysis.resources.dll" />
+    <Content Include="Bin64\uk\SpaceEngineers.resources.dll" />
+    <Content Include="Bin64\uk\VRage.Game.resources.dll" />
+    <Content Include="Bin64\VRage.Ansel.dll" />
+    <Content Include="Bin64\VRage.Audio.dll" />
+    <Content Include="Bin64\VRage.dll" />
+    <Content Include="Bin64\VRage.Game.dll" />
+    <Content Include="Bin64\VRage.Game.xml" />
+    <Content Include="Bin64\VRage.Game.XmlSerializers.dll" />
+    <Content Include="Bin64\VRage.Input.dll" />
+    <Content Include="Bin64\VRage.Input.xml" />
+    <Content Include="Bin64\VRage.Library.dll" />
+    <Content Include="Bin64\VRage.Library.xml" />
+    <Content Include="Bin64\VRage.Math.dll" />
+    <Content Include="Bin64\VRage.Math.xml" />
+    <Content Include="Bin64\VRage.Math.XmlSerializers.dll" />
+    <Content Include="Bin64\VRage.Mod.Io.dll" />
+    <Content Include="Bin64\VRage.Native.dll" />
+    <Content Include="Bin64\VRage.NativeAftermath.dll" />
+    <Content Include="Bin64\VRage.NativeWrapper.dll" />
+    <Content Include="Bin64\VRage.Network.dll" />
+    <Content Include="Bin64\VRage.Platform.Windows.dll" />
+    <Content Include="Bin64\VRage.Render.dll" />
+    <Content Include="Bin64\VRage.Render.xml" />
+    <Content Include="Bin64\VRage.Render11.dll" />
+    <Content Include="Bin64\VRage.Render11.xml" />
+    <Content Include="Bin64\VRage.Scripting.dll" />
+    <Content Include="Bin64\VRage.Scripting.xml" />
+    <Content Include="Bin64\VRage.Steam.dll" />
+    <Content Include="Bin64\VRage.UserInterface.dll" />
+    <Content Include="Bin64\VRage.xml" />
+    <Content Include="Bin64\VRage.XmlSerializers.dll" />
+    <Content Include="Bin64\x64\SQLite.Interop.dll" />
+    <Content Include="Bin64\x64\sqlite3.dll" />
+    <Content Include="Bin64\x86\SQLite.Interop.dll" />
+    <Content Include="Bin64\x86\sqlite3.dll" />
+    <Content Include="Bin64\zh-CN\SpaceEngineers.resources.dll" />
+    <Content Include="Bin64\zh-CN\VRage.Game.resources.dll" />
+    <Content Include="Bin64\zh-Hans\Microsoft.CodeAnalysis.CSharp.resources.dll" />
+    <Content Include="Bin64\zh-Hans\Microsoft.CodeAnalysis.resources.dll" />
+    <Content Include="Bin64\zh-Hant\Microsoft.CodeAnalysis.CSharp.resources.dll" />
+    <Content Include="Bin64\zh-Hant\Microsoft.CodeAnalysis.resources.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include=".git\objects\info\" />
+    <Folder Include=".git\objects\pack\" />
+    <Folder Include=".git\refs\tags\" />
+    <Folder Include=".vs\SETest\v16\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSHARP.Targets" />
+  <ProjectExtensions>
+    <VisualStudio AllowExistingFolder="true" />
+  </ProjectExtensions>
+</Project>
